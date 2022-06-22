@@ -23,8 +23,6 @@ This project has been built with Verilator v4.204.  Any change to the verilator 
 # Prerequisites:
 sudo apt-get install git perl python3 make autoconf g++ flex bison ccache
 sudo apt-get install libgoogle-perftools-dev numactl perl-doc
-sudo apt-get install libfl2
-sudo apt-get install libfl-dev
 sudo apt-get install zlibc zlib1g zlib1g-dev
 
 git clone https://github.com/verilator/verilator
