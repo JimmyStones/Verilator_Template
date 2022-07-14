@@ -47,22 +47,37 @@ endif
 CFLAGS += $(CC_OPT) $(CC_DEFINE) -Iimgui
 LDFLAGS = $(LIBS)
 EXE = ./obj_dir/Vtop
-V_OPT = -O3 --x-assign fast --x-initial fast --noassert 
+V_OPT = -O3 --x-assign fast --x-initial fast --noassert -Wno-fatal
 CC_OPT = -O
 #V_OPT = 
 #CC_OPT =   
 
 V_SRC = \
 	centipede_sim.v \
-	$(RTL)/centipede.v $(RTL)/p6502.v $(RTL)/pokey.v \
-	$(RTL)/ram.v $(RTL)/rom.v \
-	$(RTL)/color_ram.v $(RTL)/pf_rom.v $(RTL)/pf_ram_dp.v \
-	$(RTL)/vprom.v $(RTL)/hs_ram.v
+	$(RTL)/centipede.v \
+	$(RTL)/p6502.v \
+	$(RTL)/pokey.v \
+	$(RTL)/ram.v \
+	$(RTL)/rom.v \
+	$(RTL)/color_ram.v \
+	$(RTL)/pf_rom.v \
+	$(RTL)/pf_ram_dp.v \
+	$(RTL)/vprom.v \
+	$(RTL)/hs_ram.v
 
 C_SRC = \
 	sim_main.cpp  \
-sim/sim_bus.cpp		sim/sim_clock.cpp	sim/sim_console.cpp	sim/sim_video.cpp sim/sim_input.cpp \
- sim/imgui/imgui_impl_sdl.cpp sim/imgui/imgui_impl_opengl2.cpp sim/imgui/imgui_draw.cpp sim/imgui/imgui_widgets.cpp sim/imgui/imgui_tables.cpp sim/imgui/imgui.cpp
+	sim/sim_bus.cpp \
+	sim/sim_clock.cpp \
+	sim/sim_console.cpp \
+	sim/sim_video.cpp \
+	sim/sim_input.cpp \
+	sim/imgui/imgui_impl_sdl.cpp \
+	sim/imgui/imgui_impl_opengl2.cpp \
+	sim/imgui/imgui_draw.cpp \
+	sim/imgui/imgui_widgets.cpp \
+	sim/imgui/imgui_tables.cpp \
+	sim/imgui/imgui.cpp
 VOUT = obj_dir/Vtop.cpp
 
 all: $(EXE)
