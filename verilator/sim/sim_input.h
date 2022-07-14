@@ -5,6 +5,7 @@
 #pragma comment(lib, "dinput8.lib")
 #pragma comment(lib, "dxguid.lib")
 #endif
+#include "sim_console.h"
 #include "verilated_heavy.h"
 #include <queue>
 #include <vector>

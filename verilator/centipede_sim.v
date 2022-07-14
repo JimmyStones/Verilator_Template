@@ -27,7 +27,8 @@ module top(
    input [7:0]  ioctl_dout,
    input [7:0]  ioctl_din,   
    input [7:0]  ioctl_index,
-   output  reg  ioctl_wait=1'b0
+   output  reg  ioctl_wait=1'b0,
+   output reg ce_pix /*verilator public_flat_rd*/
    
 );
    
@@ -69,7 +70,6 @@ module top(
    assign AUDIO_L = {audio,audio};
    assign AUDIO_R = AUDIO_L;
 
-   reg ce_pix;
    always @(posedge clk_48) begin
       reg old_clk;
       
