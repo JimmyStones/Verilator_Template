@@ -1,5 +1,6 @@
 #include <verilated.h>
 #include "Vtop.h"
+#include "Vtop___024root.h"
 
 #include "imgui.h"
 #include "implot.h"
@@ -174,7 +175,7 @@ int verilate() {
 #endif
 
 		// Output pixels on rising edge of pixel clock
-		if (clk_48.IsRising() && top->top__DOT__ce_pix) {
+		if (clk_48.IsRising() && top->rootp->top__DOT__ce_pix) {
 			uint32_t colour = 0xFF000000 | top->VGA_B << 16 | top->VGA_G << 8 | top->VGA_R;
 			video.Clock(top->VGA_HB, top->VGA_VB, top->VGA_HS, top->VGA_VS, colour);
 		}
