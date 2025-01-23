@@ -4,7 +4,6 @@
 
 #include "sim_bus.h"
 #include "sim_console.h"
-#include "verilated_heavy.h"
 
 #ifndef _MSC_VER
 #else
@@ -66,7 +65,7 @@ void SimBus::BeforeEval()
 			console.AddLog("Cannot open file for download %s\n", currentDownload.file.c_str());
 		}
 		else {
-			console.AddLog("Starting download: %s %d", currentDownload.file.c_str(), ioctl_next_addr, ioctl_next_addr);
+			console.AddLog("Starting download: %s %d", currentDownload.file.c_str(), ioctl_next_addr);
 		}
 	}
 

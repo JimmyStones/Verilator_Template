@@ -23,6 +23,7 @@ unsigned char m_keyboardState_last[256];
 
 static DebugConsole console;
 
+#define NONE 0xFF
 #ifdef WIN32
 static const unsigned int ev2ps2[] =
 {
@@ -593,7 +594,7 @@ void SimInput::Read() {
 	for (int k = 0; k < m_keyboardStateCount; k++) {
 		if (m_keyboardState_last[k] != m_keyboardState[k]) {
 			bool ext = 0;
-			SimInput_PS2KeyEvent evt = SimInput_PS2KeyEvent(k, m_keyboardState[k], ext);
+			SimInput_PS2KeyEvent evt = SimInput_PS2KeyEvent(k, m_keyboardState[k], ext, ev2ps2[k]);
 			keyEvents.push(evt);
 		}
 		m_keyboardState_last[k] = m_keyboardState[k];
