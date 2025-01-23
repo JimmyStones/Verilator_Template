@@ -5,10 +5,11 @@
 #pragma comment(lib, "dinput8.lib")
 #pragma comment(lib, "dxguid.lib")
 #endif
-#include "verilated_heavy.h"
+#include <verilated.h>
 #include <queue>
 #include <vector>
 
+#include "sim_console.h"
 
 struct SimInput_PS2KeyEvent {
 public:
@@ -37,7 +38,6 @@ public:
 	unsigned int keyEventTimer = 0;
 	unsigned int keyEventWait = 50000;
 
-#define NONE         0xFF
 #define LCTRL        0x000100
 #define LSHIFT       0x000200
 #define LALT         0x000400
